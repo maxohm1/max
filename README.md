@@ -10,7 +10,7 @@ A web application that extracts text from documents (PDFs and images) for conten
 - **OCR Technology**: Uses Tesseract.js for optical character recognition on image files
 - **Real-time Processing**: Visual loading states and progress indicators
 - **Error Handling**: Comprehensive error messages for better user experience
-- **Copy to Clipboard**: Extracted text can be easily copied for further use
+
 
 ## TechStack Used
 
