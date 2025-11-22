@@ -33,7 +33,7 @@ A web application that extracts text from documents PDFs and images for content 
 - **Tailwind CSS** - Styling and responsive design
 - **Tesseract.js** - OCR for image text extraction
 - **PDF.js** - PDF parsing and text extraction
-- **Lucide React** - Icon library
+
 
 ## My Approach
 I built a client-side application that processes documents entirely in the browser for zero server costs. PDF.js extracts text from PDFs while Tesseract.js handles OCR for images and scanned documents. React manages state and component structure, while Tailwind CSS provides modern, responsive styling.
