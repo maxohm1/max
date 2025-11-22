@@ -12,7 +12,7 @@ A web application that extracts text from documents (PDFs and images) for conten
 - **Error Handling**: Comprehensive error messages for better user experience
 - **Copy to Clipboard**: Extracted text can be easily copied for further use
 
-## Technologies Used
+## TechStack Used
 
 - **React 19** - UI framework
 - **Vite** - Build tool and dev server
@@ -21,49 +21,9 @@ A web application that extracts text from documents (PDFs and images) for conten
 - **PDF.js** - PDF parsing and text extraction
 - **Lucide React** - Icon library
 
-## Installation & Setup
-
-1. Clone the repository:
-```bash
-git clone https://github.com/maxohm1/max.git
-cd max
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Start the development server:
-```bash
-npm run dev
-```
-
-4. Open your browser and navigate to `http://localhost:5173`
-
-## Build for Production
-
-```bash
-npm run build
-npm run preview
-```
-
-## Project Structure
-
-```
-src/
-├── components/
-│   ├── FileUpload.jsx    # Handles file upload with drag-and-drop
-│   └── TextDisplay.jsx   # Displays extracted text with copy feature
-├── utils/
-│   └── textExtractor.js  # Core logic for PDF and image text extraction
-├── App.jsx               # Main application component
-└── main.jsx             # Application entry point
-```
-
-## Approach
-
-The application leverages client-side processing to extract text from documents without server dependencies. For PDFs, PDF.js parses the document structure and extracts embedded text. For images, Tesseract.js performs OCR by analyzing pixel patterns to recognize characters. The UI is built with React for state management and component reusability, while Tailwind CSS provides a modern, responsive design. Error boundaries catch processing failures, and loading states provide user feedback during potentially lengthy OCR operations. This architecture ensures privacy (files never leave the browser), reduces infrastructure costs, and delivers instant results.
+## My Approach
+I built a client-side application that processes documents entirely in the browser for zero server costs. PDF.js extracts text from PDFs while Tesseract.js handles OCR for images and scanned documents. React manages state and component structure, while Tailwind CSS provides modern, responsive styling.
+The app features drag-and-drop uploads, loading indicators for OCR processing, error handling, and copy-to-clipboard functionality. Since everything runs locally in the browser, files never leave the user's device, processing is instant, and there's no infrastructure overhead. This approach prioritizes user privacy, simplicity, and a smooth experience without backend dependencies.
 
 ## Usage
 
@@ -72,21 +32,3 @@ The application leverages client-side processing to extract text from documents 
 3. View the extracted text in the display panel
 4. Copy the text using the "Copy Text" button for further analysis
 
-## Error Handling
-
-- Validates file types before processing
-- Displays user-friendly error messages for unsupported formats
-- Handles extraction failures gracefully
-- Prevents multiple simultaneous uploads
-
-## Future Enhancements
-
-- Support for additional file formats (DOCX, TXT)
-- Text analysis and sentiment detection
-- Engagement score calculation
-- Multi-language OCR support
-- Batch file processing
-
-## License
-
-MIT
