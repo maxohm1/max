@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import FileUpload from './components/FileUpload';
 import TextDisplay from './components/TextDisplay';
 import { extractTextFromFile } from './utils/textExtractor';
-import { FileText, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 
 function App() {
   const [extractedText, setExtractedText] = useState('');
@@ -28,16 +28,11 @@ function App() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 text-slate-900 font-sans selection:bg-blue-100">
       <div className="max-w-4xl mx-auto px-6 py-12">
         <header className="text-center mb-12">
-          <div className="inline-flex items-center justify-center p-3 bg-white rounded-2xl shadow-sm mb-6 border border-slate-100">
-            <div className="bg-blue-600 p-2 rounded-xl text-white mr-3">
-              <FileText size={24} />
-            </div>
-            <h1 className="text-2xl font-bold tracking-tight text-slate-900">
-              Social Media Content Analyzer
-            </h1>
-          </div>
-          <p className="text-slate-500 max-w-lg mx-auto text-lg">
-            Upload your documents or images to instantly extract and analyze text content.
+          <h1 className="text-3xl font-bold text-slate-900 mb-4">
+            Social Media Content Analyzer
+          </h1>
+          <p className="text-slate-600 max-w-lg mx-auto">
+            Upload your documents or images to extract text content.
           </p>
         </header>
 
@@ -65,10 +60,6 @@ function App() {
 
           <TextDisplay text={extractedText} />
         </main>
-
-        <footer className="mt-20 text-center text-slate-400 text-sm">
-          <p>© 2024 Social Media Analyzer. Built with React & Tailwind.</p>
-        </footer>
       </div>
     </div>
   );
