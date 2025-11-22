@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import FileUpload from './components/FileUpload';
 import TextDisplay from './components/TextDisplay';
 import { extractTextFromFile } from './utils/textExtractor';
-import { Sparkles } from 'lucide-react';
 
 function App() {
   const [extractedText, setExtractedText] = useState('');
@@ -49,12 +48,9 @@ function App() {
           )}
 
           {isProcessing && (
-            <div className="text-center py-12 animate-pulse">
-              <div className="inline-block p-4 bg-white rounded-full shadow-sm mb-4">
-                <Sparkles className="text-blue-500 animate-spin" size={32} />
-              </div>
-              <p className="text-slate-500 font-medium">Analyzing your document...</p>
-              <p className="text-slate-400 text-sm mt-1">This might take a moment</p>
+            <div className="text-center py-12">
+              <div className="inline-block w-12 h-12 border-4 border-slate-300 border-t-blue-500 rounded-full animate-spin mb-4"></div>
+              <p className="text-slate-600">Processing...</p>
             </div>
           )}
 
