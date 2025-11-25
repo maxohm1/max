@@ -1,30 +1,23 @@
 import React from 'react';
-import { BarChart3, TrendingUp, Settings } from 'lucide-react';
+import { BarChart3 } from 'lucide-react';
 
 const Header = () => {
   return (
-    <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="p-2 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl">
-              <BarChart3 className="w-6 h-6 text-white" />
+    <header className="bg-white/95 backdrop-blur-md border-b border-white/20 sticky top-0 z-50 shadow-sm">
+      <div className="max-w-7xl mx-auto px-8 py-5">
+        <div className="flex items-center justify-center">
+          <div className="flex items-center gap-4">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl blur-md opacity-50"></div>
+              <div className="relative p-3 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl shadow-lg">
+                <BarChart3 className="w-7 h-7 text-white" strokeWidth={2.5} />
+              </div>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-slate-900">Social Analyzer</h1>
-              <p className="text-xs text-slate-500">Content Intelligence Platform</p>
+              <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Social Analyzer</h1>
+              <p className="text-xs text-slate-500 font-medium tracking-wide">Content Intelligence Platform</p>
             </div>
           </div>
-          
-          <nav className="flex items-center gap-6">
-            <button className="flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors">
-              <TrendingUp className="w-4 h-4" />
-              Dashboard
-            </button>
-            <button className="p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-lg transition-colors">
-              <Settings className="w-5 h-5" />
-            </button>
-          </nav>
         </div>
       </div>
     </header>

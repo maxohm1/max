@@ -27,9 +27,9 @@ const FileUpload = ({ onFileSelect, isProcessing }) => {
 
     return (
         <div
-            className={`border-2 border-dashed rounded-xl p-12 text-center transition-all duration-300 ${isProcessing
-                    ? 'border-gray-300 bg-gray-50 cursor-not-allowed opacity-70'
-                    : 'border-blue-400 hover:border-blue-600 hover:bg-blue-50 cursor-pointer'
+            className={`border-2 border-dashed rounded-2xl p-10 text-center transition-all duration-300 backdrop-blur-sm ${isProcessing
+                    ? 'border-slate-300 bg-white/40 cursor-not-allowed opacity-70'
+                    : 'border-white/60 bg-white/80 hover:bg-white hover:border-white hover:shadow-2xl cursor-pointer'
                 }`}
             onDragOver={(e) => e.preventDefault()}
             onDrop={handleDrop}
@@ -42,20 +42,25 @@ const FileUpload = ({ onFileSelect, isProcessing }) => {
                 onChange={handleChange}
                 disabled={isProcessing}
             />
-            <label htmlFor="file-upload" className="cursor-pointer flex flex-col items-center gap-4">
-                <div className="p-4 bg-blue-100 rounded-full text-blue-600">
-                    <Upload size={32} />
+            <label htmlFor="file-upload" className="cursor-pointer flex flex-col items-center gap-5">
+                <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full blur-xl opacity-50"></div>
+                    <div className="relative p-5 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl shadow-lg">
+                        <Upload size={36} className="text-white" strokeWidth={2} />
+                    </div>
                 </div>
                 <div>
-                    <h3 className="text-xl font-semibold text-gray-800">
-                        {isProcessing ? 'Processing...' : 'Upload your document'}
+                    <h3 className="text-xl font-bold text-slate-800 mb-1">
+                        {isProcessing ? 'Processing...' : 'Upload Document'}
                     </h3>
-                    <p className="text-gray-500 mt-2">
-                        Drag and drop or click to browse
+                    <p className="text-slate-600 text-sm font-medium">
+                        Drag & drop or click to browse
                     </p>
-                    <p className="text-xs text-gray-400 mt-1">
-                        Supports PDF, PNG, JPG
-                    </p>
+                    <div className="flex items-center justify-center gap-2 mt-3">
+                        <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">PDF</span>
+                        <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">PNG</span>
+                        <span className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-semibold">JPG</span>
+                    </div>
                 </div>
             </label>
         </div>

@@ -13,19 +13,22 @@ const TextDisplay = ({ text }) => {
     if (!text) return null;
 
     return (
-        <div className="mt-8 bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 bg-gray-50">
-                <h3 className="font-semibold text-gray-800">Extracted Content</h3>
+        <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border border-white/40 overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 bg-gradient-to-r from-purple-50 to-blue-50">
+                <h3 className="font-bold text-slate-800 flex items-center gap-2">
+                    <span className="w-2 h-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></span>
+                    Extracted Content
+                </h3>
                 <button
                     onClick={handleCopy}
-                    className="flex items-center gap-2 text-sm text-gray-600 hover:text-blue-600 transition-colors"
+                    className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 rounded-lg transition-all shadow-md hover:shadow-lg"
                 >
                     {copied ? <Check size={16} /> : <Copy size={16} />}
                     {copied ? 'Copied!' : 'Copy Text'}
                 </button>
             </div>
-            <div className="p-6 max-h-[600px] overflow-y-auto">
-                <pre className="whitespace-pre-wrap font-sans text-gray-700 leading-relaxed">
+            <div className="p-6 max-h-[500px] overflow-y-auto scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-slate-100">
+                <pre className="whitespace-pre-wrap font-sans text-slate-700 leading-relaxed text-sm">
                     {text}
                 </pre>
             </div>
