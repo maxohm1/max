@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BarChart2 } from 'lucide-react';
 import Header from './components/Header';
 import FileUpload from './components/FileUpload';
 import TextDisplay from './components/TextDisplay';
@@ -70,8 +71,8 @@ function App() {
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 shadow-xl p-12 text-center">
                 <div className="relative inline-block mb-6">
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-blue-400 rounded-3xl blur-2xl opacity-30"></div>
-                  <div className="relative w-20 h-20 bg-gradient-to-br from-purple-900/50 to-blue-900/50 rounded-3xl flex items-center justify-center border border-white/10">
-                    <span className="text-5xl">📊</span>
+                  <div className="relative w-20 h-20 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
+                    <BarChart2 className="w-10 h-10 text-white" strokeWidth={2} />
                   </div>
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">Ready to Analyze</h3>
