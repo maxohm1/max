@@ -3,7 +3,7 @@ import { BarChart3 } from 'lucide-react';
 
 const Header = () => {
   return (
-    <header className="bg-black/40 backdrop-blur-md border-b border-white/10 sticky top-0 z-50 shadow-sm">
+    <header className="bg-black/40 backdrop-blur-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-8 py-5">
         <div className="flex items-center justify-center">
           <div className="flex items-center gap-4">
