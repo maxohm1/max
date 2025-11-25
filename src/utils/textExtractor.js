@@ -1,9 +1,8 @@
 import Tesseract from 'tesseract.js';
-import * as pdfjsLib from 'pdfjs-dist';
+import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf.mjs';
 
-// Set worker for PDF.js
-import pdfWorker from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
-pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorker;
+// Set worker for PDF.js - using unpkg CDN for legacy build
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://unpkg.com/pdfjs-dist@5.4.394/legacy/build/pdf.worker.min.mjs';
 
 export const extractTextFromFile = async (file) => {
     if (file.type === 'application/pdf') {
@@ -28,10 +27,15 @@ const extractFromPdf = async (file) => {
             fullText += `--- Page ${i} ---\n${pageText}\n\n`;
         }
 
+        if (!fullText.trim()) {
+            return 'No text found in PDF. The PDF might be image-based or empty.';
+        }
+
         return fullText;
     } catch (error) {
         console.error("PDF Extraction Error:", error);
-        throw new Error("Failed to extract text from PDF.");
+        console.error("Error details:", error.message, error.stack);
+        throw new Error(`Failed to extract text from PDF: ${error.message}`);
     }
 };
 
