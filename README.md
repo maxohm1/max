@@ -8,10 +8,20 @@ A web application that extracts text from documents PDFs and images for content 
 
 <table>
  <tr>
-    <td><img src="https://github.com/maxohm1/OneAI-ScreenShot/blob/main/deploy%20ocr.png" width="5550" alt="OneAI Home Screen"></td>
+    <td><img src="https://github.com/maxohm1/OneAI-ScreenShot/blob/main/text.png" width="5550" alt="OneAI Home Screen"></td>
   </tr>
   <tr>
     <td align="center"><b>OCR</b><br><sub>Content Analyzer</sub></td>
+  </tr>
+  </table>
+
+
+<table>
+ <tr>
+    <td><img src="https://github.com/maxohm1/OneAI-ScreenShot/blob/main/recomend.png" width="5550" alt="OneAI Home Screen"></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Content</b><br><sub>Recommendation</sub></td>
   </tr>
   </table>
 </div>
