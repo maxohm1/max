@@ -10,24 +10,24 @@ const SentimentGauge = ({ sentiment }) => {
           color: 'from-green-400 to-emerald-500', 
           emoji: '😊', 
           position: '75%',
-          bgColor: 'bg-green-50',
-          textColor: 'text-green-700'
+          bgColor: 'bg-green-500/20 border border-green-500/30',
+          textColor: 'text-green-300'
         };
       case 'negative':
         return { 
           color: 'from-red-400 to-rose-500', 
           emoji: '😔', 
           position: '25%',
-          bgColor: 'bg-red-50',
-          textColor: 'text-red-700'
+          bgColor: 'bg-red-500/20 border border-red-500/30',
+          textColor: 'text-red-300'
         };
       default:
         return { 
           color: 'from-slate-400 to-slate-500', 
           emoji: '😐', 
           position: '50%',
-          bgColor: 'bg-slate-50',
-          textColor: 'text-slate-700'
+          bgColor: 'bg-gray-500/20 border border-gray-500/30',
+          textColor: 'text-gray-300'
         };
     }
   };
@@ -35,19 +35,19 @@ const SentimentGauge = ({ sentiment }) => {
   const config = getSentimentConfig(sentiment.type);
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
-      <h3 className="text-sm font-semibold text-slate-700 mb-4">Sentiment Analysis</h3>
+    <div className="bg-white/5 rounded-2xl border border-white/10 p-6 shadow-sm">
+      <h3 className="text-sm font-semibold text-white mb-4">Sentiment Analysis</h3>
       
       <div className="relative mb-6">
         {/* Gauge background */}
-        <div className="h-3 bg-gradient-to-r from-red-300 via-slate-300 to-green-300 rounded-full" />
+        <div className="h-3 bg-gradient-to-r from-red-400/30 via-gray-400/30 to-green-400/30 rounded-full" />
         
         {/* Indicator */}
         <div 
           className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 transition-all duration-500"
           style={{ left: config.position }}
         >
-          <div className="w-6 h-6 bg-white rounded-full shadow-lg border-2 border-slate-200 flex items-center justify-center text-sm">
+          <div className="w-6 h-6 bg-white/10 rounded-full shadow-lg border-2 border-white/20 flex items-center justify-center text-sm">
             {config.emoji}
           </div>
         </div>
@@ -57,7 +57,7 @@ const SentimentGauge = ({ sentiment }) => {
         <div className={`font-semibold capitalize ${config.textColor} mb-1`}>
           {sentiment.type}
         </div>
-        <p className="text-sm text-slate-600">{sentiment.description}</p>
+        <p className="text-sm text-gray-300">{sentiment.description}</p>
       </div>
     </div>
   );

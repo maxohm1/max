@@ -28,8 +28,8 @@ const FileUpload = ({ onFileSelect, isProcessing }) => {
     return (
         <div
             className={`border-2 border-dashed rounded-2xl p-10 text-center transition-all duration-300 backdrop-blur-sm ${isProcessing
-                    ? 'border-slate-300 bg-white/40 cursor-not-allowed opacity-70'
-                    : 'border-white/60 bg-white/80 hover:bg-white hover:border-white hover:shadow-2xl cursor-pointer'
+                    ? 'border-white/20 bg-white/5 cursor-not-allowed opacity-70'
+                    : 'border-white/30 bg-white/5 hover:bg-white/10 hover:border-white/50 hover:shadow-2xl cursor-pointer'
                 }`}
             onDragOver={(e) => e.preventDefault()}
             onDrop={handleDrop}
@@ -50,16 +50,16 @@ const FileUpload = ({ onFileSelect, isProcessing }) => {
                     </div>
                 </div>
                 <div>
-                    <h3 className="text-xl font-bold text-slate-800 mb-1">
+                    <h3 className="text-xl font-bold text-white mb-1">
                         {isProcessing ? 'Processing...' : 'Upload Document'}
                     </h3>
-                    <p className="text-slate-600 text-sm font-medium">
+                    <p className="text-gray-300 text-sm font-medium">
                         Drag & drop or click to browse
                     </p>
                     <div className="flex items-center justify-center gap-2 mt-3">
-                        <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">PDF</span>
-                        <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">PNG</span>
-                        <span className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-semibold">JPG</span>
+                        <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-semibold border border-purple-500/30">PDF</span>
+                        <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-semibold border border-blue-500/30">PNG</span>
+                        <span className="px-3 py-1 bg-indigo-500/20 text-indigo-300 rounded-full text-xs font-semibold border border-indigo-500/30">JPG</span>
                     </div>
                 </div>
             </label>
