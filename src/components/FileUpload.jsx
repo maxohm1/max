@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { Upload, FileType, Image as ImageIcon } from 'lucide-react';
 
 const FileUpload = ({ onFileSelect, isProcessing }) => {
